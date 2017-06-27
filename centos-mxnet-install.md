@@ -14,6 +14,8 @@ git clone --recursive https://github.com/dmlc/mxnet
 
 cd mxnet
 
+export MXNET_HOME=`pwd`
+
 vi mshadow/make/mshadow.mk
 
 // change  -lcblas to -lsatlas in line 77
@@ -23,4 +25,10 @@ make -j4
 // test
 cd example/image-classification/
 python train_mnist.py
+
+
+// install python
+cd $MXNET_HOME/python
+python setup.py install
+
 ```
